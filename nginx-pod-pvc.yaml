@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: logger
+spec:
+  volumes:
+    - name: log-storage
+      persistentVolumeClaim:
+        claimName: log-claim
+  containers:
+    - name: log-container
+      image: nginx:alpine
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/var/www/nginx"
+          name: log-storage
+
+

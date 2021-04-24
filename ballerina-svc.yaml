@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mysvc
+  name: mysvc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysvc
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: mysvc
+    spec:
+      containers:
+      - image: ddefrancesco/k8s-microsvc:v.1.0
+        name: k8s-microsvc
+        resources: {}
+
+
+

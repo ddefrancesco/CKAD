@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: aeauth
+  name: aeauth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aeauth
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: aeauth
+    spec:
+      containers:
+      - image: ddefrancesco/aeauth
+        name: aeauth
+        resources: {}

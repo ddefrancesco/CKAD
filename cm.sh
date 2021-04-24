@@ -1,0 +1,1 @@
+kubectl create configmap time-config --from-literal=TIME_FREQ=10 --namespace dvl1987
